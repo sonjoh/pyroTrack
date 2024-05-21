@@ -1,0 +1,120 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+header {
+    background-color: #1e1e1e;
+    padding: 20px 0;
+    border-bottom: 2px solid #ff4500;
+}
+
+header h1 {
+    color: #ff4500;
+    margin: 0;
+    display: inline-block;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #ff4500;
+}
+
+/* Main Styles */
+main .search-section {
+    margin: 20px 0;
+    text-align: center;
+}
+
+main .search-section input[type="text"] {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #ff4500;
+    border-radius: 5px;
+    background-color: #232323;
+    color: #e0e0e0;
+}
+
+main .search-section button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff4500;
+    color: #e0e0e0;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+main .search-section button:hover {
+    background-color: #ff6347;
+}
+
+main .torrent-list {
+    margin: 40px 0;
+}
+
+main .torrent-list h2 {
+    color: #ff4500;
+}
+
+main .torrent-list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+main .torrent-list ul li {
+    background-color: #232323;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+main .torrent-list ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+}
+
+main .torrent-list ul li a:hover {
+    color: #ff4500;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1e1e1e;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 2px solid #ff4500;
+}
+
+footer p {
+    margin: 0;
+    color: #e0e0e0;
+}

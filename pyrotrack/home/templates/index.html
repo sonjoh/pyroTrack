@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyroTrack</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>PyroTrack</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Browse</a></li>
+                    <li><a href="#">Top Torrents</a></li>
+                    <li><a href="#">My Account</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section class="search-section">
+                <input type="text" placeholder="Search torrents...">
+                <button type="button">Search</button>
+            </section>
+            <section class="torrent-list">
+                <h2>Latest Torrents</h2>
+                <ul>
+                    <li><a href="#">Torrent 1</a></li>
+                    <li><a href="#">Torrent 2</a></li>
+                    <li><a href="#">Torrent 3</a></li>
+                    <li><a href="#">Torrent 4</a></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 PyroTrack. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

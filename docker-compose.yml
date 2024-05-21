@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  db:
+    image: mariadb:latest
+    #platform: linux/amd64
+    restart: always
+    environment:
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: mydatabaseuser
+      MYSQL_PASSWORD: mypassword
+      MYSQL_ROOT_PASSWORD: mypassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mariadb/data:/var/lib/mysql
+
+  redis:
+    image: redis:latest
+    #platform: linux/amd64
+    ports:
+      - "6379:6379"
+
+  web:
+    build:
+      context: ./pyrotrack
+      dockerfile: Dockerfile
+      #args:
+      #  - platform=linux/amd64
+    #command: python /app/wait_for_db.py && python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --noinput && gunicorn --bind 0.0.0.0:8000 pyrotrack.wsgi:application
+    #volumes:
+    #  - .:/code
+    entrypoint: /entrypoint.sh
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - redis
+    environment:
+      DJANGO_SUPERUSER_PASSWORD: Changeme123!
+      DJANGO_SUPERUSER_EMAIL: admin@admin.com
+      DJANGO_SUPERUSER_USERNAME: admin
+      DJANGO_DB_HOST: db
+      DJANGO_DB_NAME: mydatabase
+      DJANGO_DB_USER: mydatabaseuser
+      DJANGO_DB_PASSWORD: mypassword
+      DJANGO_REDIS_HOST: redis
+      DJANGO_REDIS_PORT: 6379
+      DB_PORT: 3306
